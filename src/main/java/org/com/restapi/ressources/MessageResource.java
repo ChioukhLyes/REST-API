@@ -7,12 +7,12 @@ import javax.ws.rs.*;
 import java.util.List;
 
 /**
- * Created by LYES-PC on 28/12/2015.
+ * Created by Lyes CHIOUKH on 28/12/2015.
  */
 @Path("/messages")
 @Produces("application/json")
 @Consumes("application/json")
-public class MessageRessource {
+public class MessageResource {
 
     /**
      * The Message service.

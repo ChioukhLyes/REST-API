@@ -4,14 +4,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
 /**
- * Created by LYES-PC on 28/12/2015.
+ * Created by Lyes CHIOUKH on 28/12/2015.
  */
 @XmlRootElement
 public class Profile {
 
     private long id;
     private String name;
-    private String profile;
     private String firstName;
     private String lasteName;
     private Date created;
@@ -21,18 +20,15 @@ public class Profile {
      *
      * @param id        the id
      * @param name      the name
-     * @param profile   the profile
      * @param firstName the first name
      * @param lasteName the laste name
-     * @param created   the created
      */
-    public Profile(long id, String name, String profile, String firstName, String lasteName, Date created) {
+    public Profile(long id, String name, String firstName, String lasteName) {
         this.id = id;
         this.name = name;
-        this.profile = profile;
         this.firstName = firstName;
         this.lasteName = lasteName;
-        this.created = created;
+        this.created = new Date();
     }
 
     /**
@@ -76,24 +72,6 @@ public class Profile {
      */
     public void setName(String name) {
         this.name = name;
-    }
-
-    /**
-     * Gets profile.
-     *
-     * @return the profile
-     */
-    public String getProfile() {
-        return profile;
-    }
-
-    /**
-     * Sets profile.
-     *
-     * @param profile the profile
-     */
-    public void setProfile(String profile) {
-        this.profile = profile;
     }
 
     /**
@@ -155,7 +133,6 @@ public class Profile {
         return "Profile{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", profile='" + profile + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lasteName='" + lasteName + '\'' +
                 ", created=" + created +
@@ -171,8 +148,6 @@ public class Profile {
 
         if (getId() != profile1.getId()) return false;
         if (getName() != null ? !getName().equals(profile1.getName()) : profile1.getName() != null) return false;
-        if (getProfile() != null ? !getProfile().equals(profile1.getProfile()) : profile1.getProfile() != null)
-            return false;
         if (getFirstName() != null ? !getFirstName().equals(profile1.getFirstName()) : profile1.getFirstName() != null)
             return false;
         if (getLasteName() != null ? !getLasteName().equals(profile1.getLasteName()) : profile1.getLasteName() != null)
@@ -185,7 +160,6 @@ public class Profile {
     public int hashCode() {
         int result = (int) (getId() ^ (getId() >>> 32));
         result = 31 * result + (getName() != null ? getName().hashCode() : 0);
-        result = 31 * result + (getProfile() != null ? getProfile().hashCode() : 0);
         result = 31 * result + (getFirstName() != null ? getFirstName().hashCode() : 0);
         result = 31 * result + (getLasteName() != null ? getLasteName().hashCode() : 0);
         result = 31 * result + (getCreated() != null ? getCreated().hashCode() : 0);

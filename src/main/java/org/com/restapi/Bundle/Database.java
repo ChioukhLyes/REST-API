@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by LYES-PC on 28/12/2015.
+ * Created by Lyes CHIOUKH on 28/12/2015.
  */
 
 /**
@@ -22,7 +22,7 @@ public class Database {
     /**
      * The constant profiles.
      */
-    public static Map<Long, Profile> profiles = new HashMap<>();
+    public static Map<String, Profile> profiles = new HashMap<>();
 
     /**
      * Get messages map.
@@ -38,7 +38,7 @@ public class Database {
      *
      * @return the map
      */
-    public static Map<Long, Profile> getProfiles() {
+    public static Map<String, Profile> getProfiles() {
         return profiles;
     }
 }

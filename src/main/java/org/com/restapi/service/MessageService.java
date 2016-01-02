@@ -8,9 +8,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by LYES-PC on 28/12/2015.
+ * Created by Lyes CHIOUKH on 28/12/2015.
  */
 public class MessageService {
+
 
     private Map<Long, Message> messages = Database.getMessages();
 

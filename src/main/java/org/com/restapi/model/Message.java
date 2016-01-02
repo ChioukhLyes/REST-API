@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
 /**
- * Created by LYES-PC on 28/12/2015.
+ * Created by Lyes CHIOUKH on 28/12/2015.
  */
 @XmlRootElement
 public class Message {
