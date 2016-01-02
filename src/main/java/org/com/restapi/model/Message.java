@@ -56,4 +56,38 @@ public class Message {
     public void setAutho(String autho) {
         this.autho = autho;
     }
+
+    @Override
+    public String toString() {
+        return "Message{" +
+                "id=" + id +
+                ", message='" + message + '\'' +
+                ", created=" + created +
+                ", autho='" + autho + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Message)) return false;
+
+        Message message1 = (Message) o;
+
+        if (getId() != message1.getId()) return false;
+        if (!getMessage().equals(message1.getMessage())) return false;
+        if (getCreated() != null ? !getCreated().equals(message1.getCreated()) : message1.getCreated() != null)
+            return false;
+        return getAutho() != null ? getAutho().equals(message1.getAutho()) : message1.getAutho() == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (getId() ^ (getId() >>> 32));
+        result = 31 * result + getMessage().hashCode();
+        result = 31 * result + (getCreated() != null ? getCreated().hashCode() : 0);
+        result = 31 * result + (getAutho() != null ? getAutho().hashCode() : 0);
+        return result;
+    }
 }

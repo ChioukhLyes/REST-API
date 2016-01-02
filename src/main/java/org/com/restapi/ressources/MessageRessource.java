@@ -5,7 +5,9 @@ import org.com.restapi.service.MessageService;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 /**
@@ -22,4 +24,13 @@ public class MessageRessource {
     public List<Message> getMessages() {
         return  messageService.getAllMessages();
     }
+
+    @GET
+    @Path("/{messageId}")
+    @Produces("application/xml")
+    public Message getMessage(@PathParam("messageId") long messageId){
+        return messageService.getMesage(messageId);
+    }
+
+
 }
