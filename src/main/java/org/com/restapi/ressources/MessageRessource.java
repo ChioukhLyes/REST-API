@@ -10,6 +10,8 @@ import java.util.List;
  * Created by LYES-PC on 28/12/2015.
  */
 @Path("/messages")
+@Produces("application/json")
+@Consumes("application/json")
 public class MessageRessource {
 
     /**
@@ -23,9 +25,8 @@ public class MessageRessource {
      * @return the messages
      */
     @GET
-    @Produces("application/json")
     public List<Message> getMessages() {
-        return  messageService.getAllMessages();
+        return messageService.getAllMessages();
     }
 
     /**
@@ -36,9 +37,8 @@ public class MessageRessource {
      */
     @GET
     @Path("/{messageId}")
-    @Produces("application/json")
-    public Message getMessage(@PathParam("messageId") long messageId){
-        return messageService.getMesage(messageId);
+    public Message getMessage(@PathParam("messageId") long messageId) {
+        return messageService.getMessage(messageId);
     }
 
     /**
@@ -48,9 +48,31 @@ public class MessageRessource {
      * @return the message
      */
     @POST
-    @Produces("application/json")
-    @Consumes("application/json")
-    public Message addMessage(Message message){
+    public Message addMessage(Message message) {
         return messageService.addMessage(message);
+    }
+
+    /**
+     * Update message message.
+     *
+     * @param message the message
+     * @return the message
+     */
+    @PUT
+    public Message updateMessage(Message message) {
+        return messageService.updateMessage(message);
+    }
+
+
+    /**
+     * Delete message message.
+     *
+     * @param messageId the message id
+     * @return the message
+     */
+    @DELETE
+    @Path("/{messageId}")
+    public Message DELETEMessage(@PathParam("messageId") long messageId) {
+        return messageService.deleteMessage(messageId);
     }
 }

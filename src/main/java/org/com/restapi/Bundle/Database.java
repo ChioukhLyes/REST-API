@@ -29,7 +29,7 @@ public class Database {
      *
      * @return the map
      */
-    public static Map<Long, Message> getMessages(){
+    public static Map<Long, Message> getMessages() {
         return messages;
     }
 
@@ -38,7 +38,7 @@ public class Database {
      *
      * @return the map
      */
-    public static Map<Long, Profile> getProfiles(){
-            return profiles;
+    public static Map<Long, Profile> getProfiles() {
+        return profiles;
     }
 }

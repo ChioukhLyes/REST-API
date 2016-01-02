@@ -17,9 +17,9 @@ public class MessageService {
     /**
      * Instantiates a new Message service.
      */
-    public MessageService(){
+    public MessageService() {
         messages.put(1L, new Message(1, "Hello", "Lyes"));
-        messages.put(2L, new Message(2, "Worl", "Saviola"));
+        messages.put(2L, new Message(2, "World", "Saviola"));
     }
 
     /**
@@ -27,8 +27,8 @@ public class MessageService {
      *
      * @return the list
      */
-    public List<Message> getAllMessages(){
-       return  new ArrayList<>(messages.values());
+    public List<Message> getAllMessages() {
+        return new ArrayList<>(messages.values());
     }
 
     /**
@@ -37,7 +37,7 @@ public class MessageService {
      * @param id the id
      * @return the message
      */
-    public Message getMesage(long id){
+    public Message getMessage(long id) {
         return messages.get(id);
     }
 
@@ -47,7 +47,7 @@ public class MessageService {
      * @param message the message
      * @return the message
      */
-    public Message addMessage(Message message){
+    public Message addMessage(Message message) {
         message.setId(messages.size() + 1);
         messages.put(message.getId(), message);
         return message;
@@ -59,8 +59,8 @@ public class MessageService {
      * @param message the message
      * @return the message
      */
-    public Message updateMessage(Message message){
-        if(message.getId() <= 0){
+    public Message updateMessage(Message message) {
+        if (message.getId() <= 0) {
             return null;
         }
         messages.put(message.getId(), message);
@@ -73,7 +73,7 @@ public class MessageService {
      * @param id the id
      * @return the message
      */
-    public Message deleteMessage(long id){
+    public Message deleteMessage(long id) {
         return messages.remove(id);
     }
 }

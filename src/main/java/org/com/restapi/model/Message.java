@@ -44,39 +44,21 @@ public class Message {
     }
 
     /**
-     * Gets message.
-     *
-     * @return the message
-     */
-    public String getMessage() {
-        return message;
-    }
-
-    /**
-     * Gets created.
-     *
-     * @return the created
-     */
-    public Date getCreated() {
-        return created;
-    }
-
-    /**
-     * Gets autho.
-     *
-     * @return the autho
-     */
-    public String getAutho() {
-        return autho;
-    }
-
-    /**
      * Sets id.
      *
      * @param id the id
      */
     public void setId(long id) {
         this.id = id;
+    }
+
+    /**
+     * Gets message.
+     *
+     * @return the message
+     */
+    public String getMessage() {
+        return message;
     }
 
     /**
@@ -89,12 +71,30 @@ public class Message {
     }
 
     /**
+     * Gets created.
+     *
+     * @return the created
+     */
+    public Date getCreated() {
+        return created;
+    }
+
+    /**
      * Sets created.
      *
      * @param created the created
      */
     public void setCreated(Date created) {
         this.created = created;
+    }
+
+    /**
+     * Gets autho.
+     *
+     * @return the autho
+     */
+    public String getAutho() {
+        return autho;
     }
 
     /**

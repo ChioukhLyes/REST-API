@@ -52,57 +52,21 @@ public class Profile {
     }
 
     /**
-     * Gets name.
-     *
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Gets profile.
-     *
-     * @return the profile
-     */
-    public String getProfile() {
-        return profile;
-    }
-
-    /**
-     * Gets first name.
-     *
-     * @return the first name
-     */
-    public String getFirstName() {
-        return firstName;
-    }
-
-    /**
-     * Gets laste name.
-     *
-     * @return the laste name
-     */
-    public String getLasteName() {
-        return lasteName;
-    }
-
-    /**
-     * Gets created.
-     *
-     * @return the created
-     */
-    public Date getCreated() {
-        return created;
-    }
-
-    /**
      * Sets id.
      *
      * @param id the id
      */
     public void setId(long id) {
         this.id = id;
+    }
+
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
+    public String getName() {
+        return name;
     }
 
     /**
@@ -115,12 +79,30 @@ public class Profile {
     }
 
     /**
+     * Gets profile.
+     *
+     * @return the profile
+     */
+    public String getProfile() {
+        return profile;
+    }
+
+    /**
      * Sets profile.
      *
      * @param profile the profile
      */
     public void setProfile(String profile) {
         this.profile = profile;
+    }
+
+    /**
+     * Gets first name.
+     *
+     * @return the first name
+     */
+    public String getFirstName() {
+        return firstName;
     }
 
     /**
@@ -133,12 +115,30 @@ public class Profile {
     }
 
     /**
+     * Gets laste name.
+     *
+     * @return the laste name
+     */
+    public String getLasteName() {
+        return lasteName;
+    }
+
+    /**
      * Sets laste name.
      *
      * @param lasteName the laste name
      */
     public void setLasteName(String lasteName) {
         this.lasteName = lasteName;
+    }
+
+    /**
+     * Gets created.
+     *
+     * @return the created
+     */
+    public Date getCreated() {
+        return created;
     }
 
     /**
