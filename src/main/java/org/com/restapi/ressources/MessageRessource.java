@@ -2,12 +2,9 @@ package org.com.restapi.ressources;
 
 import org.com.restapi.model.Message;
 import org.com.restapi.service.MessageService;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import javax.ws.rs.*;
 import java.util.List;
 
 /**
@@ -31,6 +28,14 @@ public class MessageRessource {
     public Message getMessage(@PathParam("messageId") long messageId){
         return messageService.getMesage(messageId);
     }
+
+    @POST
+    @Produces("application/json")
+    @Consumes("application/json")
+    public Message addMessage(Message message){
+        return messageService.addMessage(message);
+    }
+
 
 
 }
