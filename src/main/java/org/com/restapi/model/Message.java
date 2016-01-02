@@ -6,7 +6,6 @@ import java.util.Date;
 /**
  * Created by LYES-PC on 28/12/2015.
  */
-
 @XmlRootElement
 public class Message {
 
@@ -15,9 +14,19 @@ public class Message {
     private Date created;
     private String autho;
 
+    /**
+     * Instantiates a new Message.
+     */
     public Message() {
     }
 
+    /**
+     * Instantiates a new Message.
+     *
+     * @param id      the id
+     * @param message the message
+     * @param autho   the autho
+     */
     public Message(long id, String message, String autho) {
         this.id = id;
         this.message = message;
@@ -25,34 +34,74 @@ public class Message {
         this.autho = autho;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public long getId() {
         return id;
     }
 
+    /**
+     * Gets message.
+     *
+     * @return the message
+     */
     public String getMessage() {
         return message;
     }
 
+    /**
+     * Gets created.
+     *
+     * @return the created
+     */
     public Date getCreated() {
         return created;
     }
 
+    /**
+     * Gets autho.
+     *
+     * @return the autho
+     */
     public String getAutho() {
         return autho;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(long id) {
         this.id = id;
     }
 
+    /**
+     * Sets message.
+     *
+     * @param message the message
+     */
     public void setMessage(String message) {
         this.message = message;
     }
 
+    /**
+     * Sets created.
+     *
+     * @param created the created
+     */
     public void setCreated(Date created) {
         this.created = created;
     }
 
+    /**
+     * Sets autho.
+     *
+     * @param autho the autho
+     */
     public void setAutho(String autho) {
         this.autho = autho;
     }

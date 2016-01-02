@@ -6,7 +6,6 @@ import java.util.Date;
 /**
  * Created by LYES-PC on 28/12/2015.
  */
-
 @XmlRootElement
 public class Profile {
 
@@ -17,6 +16,16 @@ public class Profile {
     private String lasteName;
     private Date created;
 
+    /**
+     * Instantiates a new Profile.
+     *
+     * @param id        the id
+     * @param name      the name
+     * @param profile   the profile
+     * @param firstName the first name
+     * @param lasteName the laste name
+     * @param created   the created
+     */
     public Profile(long id, String name, String profile, String firstName, String lasteName, Date created) {
         this.id = id;
         this.name = name;
@@ -26,54 +35,117 @@ public class Profile {
         this.created = created;
     }
 
+    /**
+     * Instantiates a new Profile.
+     */
     public Profile() {
 
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public long getId() {
         return id;
     }
 
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Gets profile.
+     *
+     * @return the profile
+     */
     public String getProfile() {
         return profile;
     }
 
+    /**
+     * Gets first name.
+     *
+     * @return the first name
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Gets laste name.
+     *
+     * @return the laste name
+     */
     public String getLasteName() {
         return lasteName;
     }
 
+    /**
+     * Gets created.
+     *
+     * @return the created
+     */
     public Date getCreated() {
         return created;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(long id) {
         this.id = id;
     }
 
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Sets profile.
+     *
+     * @param profile the profile
+     */
     public void setProfile(String profile) {
         this.profile = profile;
     }
 
+    /**
+     * Sets first name.
+     *
+     * @param firstName the first name
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Sets laste name.
+     *
+     * @param lasteName the laste name
+     */
     public void setLasteName(String lasteName) {
         this.lasteName = lasteName;
     }
 
+    /**
+     * Sets created.
+     *
+     * @param created the created
+     */
     public void setCreated(Date created) {
         this.created = created;
     }

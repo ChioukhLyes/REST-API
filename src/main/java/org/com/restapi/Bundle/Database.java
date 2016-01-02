@@ -15,13 +15,29 @@ import java.util.Map;
  */
 public class Database {
 
+    /**
+     * The constant messages.
+     */
     public static Map<Long, Message> messages = new HashMap<>();
+    /**
+     * The constant profiles.
+     */
     public static Map<Long, Profile> profiles = new HashMap<>();
 
+    /**
+     * Get messages map.
+     *
+     * @return the map
+     */
     public static Map<Long, Message> getMessages(){
         return messages;
     }
 
+    /**
+     * Get profiles map.
+     *
+     * @return the map
+     */
     public static Map<Long, Profile> getProfiles(){
             return profiles;
     }
