@@ -1,5 +1,6 @@
 package org.com.restapi.ressources;
 
+import org.com.restapi.Bundle.MessageBeanParam;
 import org.com.restapi.model.Message;
 import org.com.restapi.service.MessageService;
 
@@ -25,14 +26,12 @@ public class MessageResource {
      * @return the messages
      */
     @GET
-    public List<Message> getMessages(@QueryParam("year") int year,
-                                     @QueryParam("limit") int limit,
-                                     @QueryParam("offset") int offset) {
+    public List<Message> getMessages(@BeanParam MessageBeanParam beanParam) {
         //JUST FOR TEST
-        if(year > 0)
-            return  messageService.getAllMessagesForYear(year);
-        if(limit > 0 && offset >= 0)
-            return  messageService.getAllMessagesPaginated(limit, offset);
+        if(beanParam.getYear() > 0)
+            return  messageService.getAllMessagesForYear(beanParam.getYear());
+        if(beanParam.getLimit() > 0 && beanParam.getOffset() >= 0)
+            return  messageService.getAllMessagesPaginated(beanParam.getLimit(), beanParam.getOffset());
         return messageService.getAllMessages();
     }
 
