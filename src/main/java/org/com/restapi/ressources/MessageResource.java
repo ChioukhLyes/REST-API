@@ -25,7 +25,14 @@ public class MessageResource {
      * @return the messages
      */
     @GET
-    public List<Message> getMessages() {
+    public List<Message> getMessages(@QueryParam("year") int year,
+                                     @QueryParam("limit") int limit,
+                                     @QueryParam("offset") int offset) {
+        //JUST FOR TEST
+        if(year > 0)
+            return  messageService.getAllMessagesForYear(year);
+        if(limit > 0 && offset >= 0)
+            return  messageService.getAllMessagesPaginated(limit, offset);
         return messageService.getAllMessages();
     }
 

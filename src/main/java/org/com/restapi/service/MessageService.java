@@ -4,6 +4,7 @@ import org.com.restapi.Bundle.Database;
 import org.com.restapi.model.Message;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -30,6 +31,39 @@ public class MessageService {
      */
     public List<Message> getAllMessages() {
         return new ArrayList<>(messages.values());
+    }
+
+
+    /**
+     * Gets all messages for year.
+     *
+     * @param year the year
+     * @return the all messages for year
+     */
+    public List<Message> getAllMessagesForYear(int year) {
+        List<Message>  messageForYear = new ArrayList<>();
+        Calendar calendar = Calendar.getInstance();
+        for (Message message : messages.values()){
+            calendar.setTime(message.getCreated());
+            System.out.println(message.getCreated());
+            if(calendar.get(Calendar.YEAR) == year)
+                messageForYear.add(message);
+        }
+        return messageForYear;
+    }
+
+
+    /**
+     * Gets all messages paginated.
+     *
+     * @param limit  the limit
+     * @param offset the offset
+     * @return the all messages paginated
+     */
+    public List<Message> getAllMessagesPaginated(int limit, int offset) {
+        List<Message> messagesPaginated = new ArrayList<>(messages.values());
+        if (limit + offset > messages.size()) return new ArrayList<>();
+        return messagesPaginated.subList(offset, offset + limit);
     }
 
     /**
