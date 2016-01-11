@@ -1,5 +1,6 @@
 package org.com.restapi.service;
 
+import org.com.restapi.Bundle.DataNoteFoundException;
 import org.com.restapi.Bundle.Database;
 import org.com.restapi.model.Message;
 
@@ -73,7 +74,10 @@ public class MessageService {
      * @return the message
      */
     public Message getMessage(long id) {
-        return messages.get(id);
+        Message message =  messages.get(id);
+        if(message == null)
+            throw new DataNoteFoundException("Message with id : "+id+" not found.");
+        return message;
     }
 
     /**
