@@ -1,5 +1,6 @@
 package org.com.restapi.Bundle;
 
+import org.com.restapi.model.Comment;
 import org.com.restapi.model.Message;
 import org.com.restapi.model.Profile;
 
@@ -25,6 +26,11 @@ public class Database {
     public static Map<String, Profile> profiles = new HashMap<>();
 
     /**
+     * The constant comments.
+     */
+    public static Map<Long, Comment> comments = new HashMap<>();
+
+    /**
      * Get messages map.
      *
      * @return the map
@@ -40,5 +46,14 @@ public class Database {
      */
     public static Map<String, Profile> getProfiles() {
         return profiles;
+    }
+
+    /**
+     * Gets comments.
+     *
+     * @return the comments
+     */
+    public static Map<Long, Comment> getComments() {
+        return comments;
     }
 }

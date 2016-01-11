@@ -1,7 +1,10 @@
 package org.com.restapi.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Lyes CHIOUKH on 28/12/2015.
@@ -12,7 +15,8 @@ public class Message {
     private long id;
     private String message;
     private Date created;
-    private String autho;
+    private String author;
+    private Map<Long, Comment> comments = new HashMap<>();
 
     /**
      * Instantiates a new Message.
@@ -25,13 +29,13 @@ public class Message {
      *
      * @param id      the id
      * @param message the message
-     * @param autho   the autho
+     * @param author  the author
      */
-    public Message(long id, String message, String autho) {
+    public Message(long id, String message, String author) {
         this.id = id;
         this.message = message;
         this.created = new Date();
-        this.autho = autho;
+        this.author = author;
     }
 
     /**
@@ -89,21 +93,41 @@ public class Message {
     }
 
     /**
-     * Gets autho.
+     * Gets author.
      *
-     * @return the autho
+     * @return the author
      */
     public String getAutho() {
-        return autho;
+        return author;
     }
 
     /**
-     * Sets autho.
+     * Sets author.
      *
-     * @param autho the autho
+     * @param author the author
      */
-    public void setAutho(String autho) {
-        this.autho = autho;
+    public void setAutho(String author) {
+        this.author = author;
+    }
+
+
+    /**
+     * Gets comments.
+     *
+     * @return the comments
+     */
+    @XmlTransient
+    public Map<Long, Comment> getComments() {
+        return comments;
+    }
+
+    /**
+     * Sets comments.
+     *
+     * @param comments the comments
+     */
+    public void setComments(Map<Long, Comment> comments) {
+        this.comments = comments;
     }
 
     @Override
@@ -112,7 +136,7 @@ public class Message {
                 "id=" + id +
                 ", message='" + message + '\'' +
                 ", created=" + created +
-                ", autho='" + autho + '\'' +
+                ", author='" + author + '\'' +
                 '}';
     }
 

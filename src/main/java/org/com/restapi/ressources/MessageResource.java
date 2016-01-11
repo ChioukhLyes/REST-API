@@ -1,10 +1,12 @@
 package org.com.restapi.ressources;
 
+import com.sun.org.apache.regexp.internal.RE;
 import org.com.restapi.Bundle.MessageBeanParam;
 import org.com.restapi.model.Message;
 import org.com.restapi.service.MessageService;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 /**
@@ -53,9 +55,18 @@ public class MessageResource {
      * @param message the message
      * @return the message
      */
+//    @POST
+//    public Message addMessage(Message message) {
+//        return messageService.addMessage(message);
+//    }
+
+    //Using Status code
     @POST
-    public Message addMessage(Message message) {
-        return messageService.addMessage(message);
+    public Response addMessage(Message message){
+        Message newMessage = messageService.addMessage(message);
+        return Response.status(Response.Status.CREATED)
+                .entity(newMessage)
+                .build();
     }
 
     /**
@@ -81,4 +92,14 @@ public class MessageResource {
     public Message DELETEMessage(@PathParam("messageId") long messageId) {
         return messageService.deleteMessage(messageId);
     }
+
+    /**
+     * Implementing Subresources
+     */
+
+    @Path("/{messageId}/comments")
+    public CommentResource getCommentResource(){
+        return new CommentResource();
+    }
+
 }
