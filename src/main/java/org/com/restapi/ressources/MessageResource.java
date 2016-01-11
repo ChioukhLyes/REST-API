@@ -1,12 +1,14 @@
 package org.com.restapi.ressources;
 
-import com.sun.org.apache.regexp.internal.RE;
 import org.com.restapi.Bundle.MessageBeanParam;
 import org.com.restapi.model.Message;
 import org.com.restapi.service.MessageService;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
+import java.net.URI;
 import java.util.List;
 
 /**
@@ -62,9 +64,11 @@ public class MessageResource {
 
     //Using Status code
     @POST
-    public Response addMessage(Message message){
+    public Response addMessage(Message message, @Context UriInfo uriInfo){
         Message newMessage = messageService.addMessage(message);
-        return Response.status(Response.Status.CREATED)
+        String newId = String.valueOf(newMessage.getId());
+        URI uri = uriInfo.getAbsolutePathBuilder().path(newId).build();
+        return Response.created(uri)
                 .entity(newMessage)
                 .build();
     }
